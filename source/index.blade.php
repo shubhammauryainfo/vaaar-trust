@@ -1,7 +1,13 @@
 @extends('_layouts.main')
 
 @section('body')
-<div class="p-8">
-    <h1 class="text-3xl font-bold">Hello world!</h1>
-</div>
+@include('_layouts.partials.header')
+<div class="container">
+    <div class="row">
+        <div class="flex">
+            <h1>Home Page</h1>
+            </div>
+
+
+    </div>
 @endsection
