@@ -7,7 +7,36 @@
   \***********************************/
 /***/ (() => {
 
+document.addEventListener('DOMContentLoaded', function () {
+  var items = document.querySelectorAll('[data-carousel-item]');
+  var indicators = document.querySelectorAll('[data-carousel-slide-to]');
+  var currentIndex = 0;
+  function showSlide(index) {
+    items.forEach(function (item, i) {
+      item.classList.toggle('hidden', i !== index);
+      indicators[i].setAttribute('aria-current', i === index ? 'true' : 'false');
+    });
+    currentIndex = index;
+  }
 
+  // Initialize with first slide visible
+  showSlide(currentIndex);
+
+  // Event listeners for next/previous buttons
+  document.querySelector('[data-carousel-next]').addEventListener('click', function () {
+    showSlide((currentIndex + 1) % items.length);
+  });
+  document.querySelector('[data-carousel-prev]').addEventListener('click', function () {
+    showSlide((currentIndex - 1 + items.length) % items.length);
+  });
+
+  // Event listeners for indicator buttons
+  indicators.forEach(function (indicator, index) {
+    indicator.addEventListener('click', function () {
+      return showSlide(index);
+    });
+  });
+});
 
 /***/ }),
 
