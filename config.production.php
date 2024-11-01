@@ -2,5 +2,5 @@
 
 return [
     'production' => true,
-    'baseUrl' => 'https://shubhammauryainfo.github.io/vaaar-trust/',
+    'baseUrl' => 'https://shubhammauryainfo.github.io/vaaar-trust',
 ];
