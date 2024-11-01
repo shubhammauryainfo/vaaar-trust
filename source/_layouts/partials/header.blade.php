@@ -17,7 +17,7 @@
         @if(!empty($page['menus']))
           @foreach ($page['menus'] as $menu)
             <li class="border-b md:border-0 border-gray-300 md:dark:border-transparent">
-              <a href="{{ $page->baseUrl.$menu['url'] }}" class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0">{{ $menu['label'] }}</a>
+              <a href="{{ $page->baseUrl.$menu['url'] }}" class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent font-semibold text-md md:hover:text-blue-700 md:p-0">{{ $menu['label'] }}</a>
             </li>
           @endforeach
         @else
