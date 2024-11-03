@@ -63,6 +63,42 @@ return [
             'label' => 'CONTACT US'
         ],
     ],
+
+    'teamMembers' => [
+    [
+        'name' => 'Abhay Singh',
+        'image' => '/assets/images/team/img1.png',
+    ],
+    [
+        'name' => 'Vishal Pandey',
+        'image' => '/assets/images/team/img2.png',
+    ],
+    [
+        'name' => 'Riyaz Khan',
+        'image' => '/assets/images/team/img3.png',
+    ],
+    [
+        'name' => 'Ankit Yadav',
+        'image' => '/assets/images/team/img4.png',
+    ],
+    [
+        'name' => 'Anand Dubey',
+        'image' => '/assets/images/team/img5.png',
+    ],
+    [
+        'name' => 'Satyadeo D. Verma',
+        'image' => '/assets/images/team/img6.png',
+    ],
+    [
+        'name' => 'Shubham Maurya',
+        'image' => '/assets/images/team/img.png',
+    ],
+    [
+        'name' => 'Rajat Vishwakarma',
+        'image' => '/assets/images/team/img8.png',
+    ],
+],
+
     
    
 ];
