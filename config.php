@@ -39,6 +39,30 @@ return [
             ],
     
         ],
+
+    'pages' => [
+        'home' => [
+            'label' => 'HOME'
+        ],
+        'about' => [
+            'label' => 'ABOUT US'
+        ],
+        'events' => [
+            'label' => 'EVENTS'
+        ],
+        'bankdetails' => [
+            'label' => 'BANK DETAILS'
+        ],
+        'gallery' => [
+            'label' => 'GALLERY'
+        ],
+        'notice' => [
+            'label' => 'NOTICE'
+        ],
+        'contact' => [
+            'label' => 'CONTACT US'
+        ],
+    ],
     
    
 ];
