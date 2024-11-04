@@ -23,8 +23,8 @@
     @endif
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-        <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
+        <link rel="stylesheet" href="{{ mix('/css/main.css', '/assets/build') }}">
+        <script defer src="{{ mix('/js/main.js', '/assets/build') }}"></script>
     </head>
     <body class="text-gray-900 poppins antialiased ">
         @yield('body')
