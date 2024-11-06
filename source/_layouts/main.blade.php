@@ -30,6 +30,7 @@
            <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
            <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
        @endif
+       
     </head>
     <body class="text-gray-900 poppins antialiased ">
         @yield('body')

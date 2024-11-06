@@ -2,5 +2,5 @@
 
 return [
     'production' => true,
-    'baseUrl' => 'https://shubhammauryainfo.github.io/vaaar-trust',
+    'api_url'=>'https://vaaar-backend.onrender.com/api' 
 ];

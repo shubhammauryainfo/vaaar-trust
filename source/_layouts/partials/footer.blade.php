@@ -45,7 +45,7 @@
                     <li><a href="{{ $page->baseUrl }}/contact" class="hover:text-gray-300">Contact Us</a></li>
                     <li><a href="{{ $page->baseUrl }}/bankdetails" class="hover:text-gray-300">Bank Details</a></li>
                     <li><a href="{{ $page->baseUrl }}/funds-details" class="hover:text-gray-300">Funds Details</a></li>
-                    <li><a href="http://vaaarfoundation.github.io/README.md" class="hover:text-gray-300">Terms & Conditions</a></li>
+                    <li><a href="{{ $page->baseUrl }}/t&c" class="hover:text-gray-300">Terms & Conditions</a></li>
                 </ul>
             </div>
 

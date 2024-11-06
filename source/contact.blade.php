@@ -70,7 +70,7 @@
 
             <!-- Contact Form -->
             <div class="bg-white rounded-lg shadow-lg p-8">
-                <form id="contactForm" method="POST" action="form_response.php" class="space-y-6">
+                <form id="contactForm" method="POST"  class="space-y-6">
                     <div>
                         <input type="text" name="name" id="Name" required
                             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-200"
@@ -108,6 +108,7 @@
                         </button>
                     </div>
                 </form>
+               
             </div>
             </div>
         </div>
