@@ -20,7 +20,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 window.Swal;
 document.addEventListener('DOMContentLoaded', function () {
-  console.log("shubham");
+  // console.log("shubham")
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', /*#__PURE__*/function () {

@@ -2,5 +2,5 @@
 
 return [
     'production' => true,
-    'api_url'=>'https://vaaar-backend.onrender.com/api' 
+    'api_url'=>'https://vaaar-backend.onrender.com' 
 ];

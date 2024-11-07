@@ -4,7 +4,7 @@ window.Swal
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("shubham")
+    // console.log("shubham")
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
