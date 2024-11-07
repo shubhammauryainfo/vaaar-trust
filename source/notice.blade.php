@@ -5,17 +5,47 @@
 @include('_layouts.partials.after-header',['data'=>$page['pages']['notice']])
 
 <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Coming Soon</h2>
-            <p class="text-lg text-gray-600">We're working on bringing you important notices and updates. Please check back later.</p>
-            <div class="mt-8">
-                <svg class="w-24 h-24 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-            </div>
-        </div>
-    </div>
+    @php
+       $notices = json_decode(file_get_contents('https://vaaar-backend.onrender.com/api/notices'), true);
+@endphp
+<div class="container mx-auto px-4">
+<div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
+                    Title
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
+                    Date
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
+                    Download / View
+                </th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            @foreach($notices as $notice)
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm font-medium text-gray-900">{{ $notice['title'] }}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">{{ $notice['date'] }}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href="{{ $notice['pdf_url'] }}" class="text-indigo-600 hover:text-indigo-900">
+                        View
+                    </a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+</div>
+
+
 </section>
 
 @include('_layouts.partials.footer')
