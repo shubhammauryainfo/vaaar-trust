@@ -10,17 +10,23 @@
     @php
         $events = json_decode(file_get_contents('https://vaaar-backend.onrender.com/api/events'), true);
     @endphp
-    @foreach($events as $event)
-        <div class="max-w-sm rounded-md overflow-hidden shadow-lg bg-white m-4 p-4">
-            <img class="w-full h-48 object-cover" src="{{ $event['image_url']}}" alt="{{ $event['title'] }}">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{{ $event['title'] }}</div>
-                <p class="text-gray-700 text-base">
-                    {{ $event['description'] }}
-                </p>
+    @if(count($events) > 0)
+        @foreach($events as $event)
+            <div class="max-w-sm rounded-md overflow-hidden shadow-lg bg-white m-4 p-4">
+                <img class="w-full h-48 object-cover" src="{{$page->api_url}}/uploads/{{$event['image_url']}}" alt="{{ $event['title'] }}">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">{{ $event['title'] }}</div>
+                    <p class="text-gray-700 text-base">
+                        {{ $event['description'] }}
+                    </p>
+                </div>
             </div>
+        @endforeach
+    @else
+        <div class="text-center text-gray-700">
+            There is no record.
         </div>
-    @endforeach
+    @endif
 </div>
 </section>
 
