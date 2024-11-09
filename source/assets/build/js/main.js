@@ -20,8 +20,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 window.Swal;
 document.addEventListener('DOMContentLoaded', function () {
-  // console.log("shubham")
   var contactForm = document.getElementById('contactForm');
+  var submitButton = document.getElementById('submitButton'); // Button ID should be added in the HTML form
+
   if (contactForm) {
     contactForm.addEventListener('submit', /*#__PURE__*/function () {
       var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
@@ -31,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
             case 0:
               e.preventDefault();
 
+              // Set button text to 'Sending...' and disable it
+              submitButton.textContent = 'Sending...';
+              submitButton.disabled = true;
+
               // Get form data
               formData = {
                 name: document.getElementById('Name').value,
@@ -39,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
               };
-              _context.prev = 2;
-              _context.next = 5;
+              _context.prev = 4;
+              _context.next = 7;
               return fetch('https://vaaar-backend.onrender.com/api/forms', {
                 method: 'POST',
                 headers: {
@@ -48,33 +53,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 body: JSON.stringify(formData)
               });
-            case 5:
+            case 7:
               response = _context.sent;
               if (!response.ok) {
-                _context.next = 11;
+                _context.next = 14;
                 break;
               }
-              // Show success message
+              // Show success message and set button text to 'Sent'
               sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                 icon: 'success',
                 title: 'Success!',
                 text: 'Your message has been sent successfully.',
                 confirmButtonColor: '#3B82F6'
               });
+              submitButton.textContent = 'Sent';
 
               // Reset form
               contactForm.reset();
-              _context.next = 12;
-              break;
-            case 11:
-              throw new Error('Network response was not ok');
-            case 12:
-              _context.next = 18;
+              _context.next = 15;
               break;
             case 14:
-              _context.prev = 14;
-              _context.t0 = _context["catch"](2);
-              // Show error message
+              throw new Error('Network response was not ok');
+            case 15:
+              _context.next = 21;
+              break;
+            case 17:
+              _context.prev = 17;
+              _context.t0 = _context["catch"](4);
+              // Show error message and revert button to 'Send'
               sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -82,11 +88,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 confirmButtonColor: '#3B82F6'
               });
               console.error('Error:', _context.t0);
-            case 18:
+            case 21:
+              _context.prev = 21;
+              // Reset button after a delay
+              setTimeout(function () {
+                submitButton.textContent = 'Send';
+                submitButton.disabled = false;
+              }, 2000);
+              return _context.finish(21);
+            case 24:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[2, 14]]);
+        }, _callee, null, [[4, 17, 21, 24]]);
       }));
       return function (_x) {
         return _ref.apply(this, arguments);

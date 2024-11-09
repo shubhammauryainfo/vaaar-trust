@@ -1,15 +1,18 @@
 import Swal from "sweetalert2";
 import 'sweetalert2/dist/sweetalert2.css';
-window.Swal
-
+window.Swal;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // console.log("shubham")
     const contactForm = document.getElementById('contactForm');
-    
+    const submitButton = document.getElementById('submitButton'); // Button ID should be added in the HTML form
+
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            // Set button text to 'Sending...' and disable it
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
 
             // Get form data
             const formData = {
@@ -30,13 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 if (response.ok) {
-                    // Show success message
+                    // Show success message and set button text to 'Sent'
                     Swal.fire({
                         icon: 'success',
                         title: 'Success!',
                         text: 'Your message has been sent successfully.',
                         confirmButtonColor: '#3B82F6'
                     });
+                    submitButton.textContent = 'Sent';
 
                     // Reset form
                     contactForm.reset();
@@ -44,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Network response was not ok');
                 }
             } catch (error) {
-                // Show error message
+                // Show error message and revert button to 'Send'
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -52,6 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     confirmButtonColor: '#3B82F6'
                 });
                 console.error('Error:', error);
+            } finally {
+                // Reset button after a delay
+                setTimeout(() => {
+                    submitButton.textContent = 'Send';
+                    submitButton.disabled = false;
+                }, 2000);
             }
         });
     }
