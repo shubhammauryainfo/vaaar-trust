@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
               return fetch('https://vaaar-backend.onrender.com/api/forms', {
                 method: 'POST',
                 headers: {
+                  'api-key': 'bd6fd14194397655f420e7dcde9012524d8cec67de577f4e250b43843f49a224',
                   'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)

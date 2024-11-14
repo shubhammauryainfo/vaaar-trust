@@ -8,7 +8,14 @@
     <div class="flex flex-wrap justify-center">
 
     @php
-        $events = json_decode(file_get_contents('https://vaaar-backend.onrender.com/api/events'), true);
+        $options = array(
+            'http' => array(
+                'method' => 'GET',
+                'header' => 'api-key: bd6fd14194397655f420e7dcde9012524d8cec67de577f4e250b43843f49a224'
+            )
+        );
+        $context = stream_context_create($options);
+        $events = json_decode(file_get_contents('https://vaaar-backend.onrender.com/api/events', false, $context), true);
     @endphp
     @if(count($events) > 0)
         @foreach($events as $event)
