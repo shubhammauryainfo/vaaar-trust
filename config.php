@@ -2,7 +2,7 @@
 
 return [
     'production' => false,
-    'api_url'=>'http://localhost:3000',
+    'api_url'=>'http://localhost:5000',
     'baseUrl' => 'https://vaaar-trust.test',
     'description' => 'Vaaar Foundation - Helping impoverished communities by providing essential support and resources to those in need. Join us in making a positive impact on the lives of the underprivileged.',
     'seo_image' => '/assets/images/favicon.png',
