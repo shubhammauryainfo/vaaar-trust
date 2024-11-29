@@ -54,7 +54,7 @@
 </div>
         @else
             <div class="text-center text-gray-700">
-                There is no record.
+                There is no records.
             </div>
         @endif
     </div>
