@@ -3,7 +3,7 @@
 @section('body')
 @include('_layouts.partials.header')
 @include('_layouts.partials.after-header',['data'=>$page['pages']['about']])
-<!-- About Section -->
+<!-- Aboutus Section -->
 <div class="py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row justify-between items-center gap-12">
