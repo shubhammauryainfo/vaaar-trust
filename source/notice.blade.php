@@ -43,7 +43,7 @@
                     <div class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($notice['date'])->format('F j, Y') }}</div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <a href="{{ $notice['pdf_url'] }}" class="text-indigo-600 hover:text-indigo-900">
+                    <a href="{{$page->api_url}}/uploads/{{ $notice['pdf_url'] }}" class="text-indigo-600 hover:text-indigo-900">
                         View
                     </a>
                 </td>
