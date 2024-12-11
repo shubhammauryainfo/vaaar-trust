@@ -1,7 +1,7 @@
 vaaar-trust official website
 
-https://vaaar-trust.com/ local
+https://vaaar-trust.test/ local
 
-https://shubhammauryainfo.github.io/vaaar-trust  official
+https://shubhammauryainfo.github.io/vaaarfoundation  official
 
 
